@@ -1,45 +1,87 @@
 {
-  "title": "Elementary Math Quiz",
+  "title": "AEM 6 Developer Certification Reviewer",
   "questions": [
     {
-      "question": "5 x 4 =",
+      "question": "You are working with two components: Component A and Component B. Component B has a slightly different behavior than component A. What is the best way to reuse the default script of component A in component B?",
       "answers": [
         {
           "point": 1,
-          "label": "20"
+          "label": "Set a property in component B called sling:resourceSuperType with the path to component A and omit the default script in component B"
         },
         {
           "point": 0,
-          "label": "10"
+          "label": "Set a property in component B called sling:resourceSuperType with the path to component A and create an empty default script in component B"
         },
         {
           "point": 0,
-          "label": "30"
+          "label": "Set a property in component B called sling:resourceSuperType with the path to component A and include the default script of component A in the default script in component B"
         },
         {
           "point": 0,
-          "label": "25"
+          "label": "Copy the default script from component A into component B"
         }
       ]
     },
     {
-      "question": "2 + 4 x 10 =",
+      "question": "What does an Item represent in a JCR repository hierarchical content model diagram?",
       "answers": [
         {
           "point": 0,
-          "label": "60"
+          "label": "The value to be stored"
         },
         {
           "point": 1,
-          "label": "42"
+          "label": "A Node or a Property"
         },
         {
           "point": 0,
-          "label": "40"
+          "label": "The UUID of Node"
         },
         {
           "point": 0,
-          "label": "20"
+          "label": "The path to a Node"
+        }
+      ]
+    },
+    {
+      "question": "How do you delete a property inside a Node object?",
+      "answers": [
+        {
+          "point": 0,
+          "label": "node.removeProperty(\"propertyName\");"
+        },
+        {
+          "point": 0,
+          "label": "node.setProperty(\"propertyName\", \"\");"
+        },
+        {
+          "point": 1,
+          "label": "node.setProperty(\"propertyName\", null);"
+        },
+        {
+          "point": 0,
+          "label": "node.delete(\"propertyName\");"
+        }
+      ]
+    },
+    {
+      "question": "What is the purpose of the Export Package Manifest header?",
+      "answers": [
+        {
+          "point": 0,
+          "label": "Stores the defined packages in the CQ installation folder."
+        },
+        {
+          "point": 0,
+          "label": "Define packages that are copid into a war file."
+        },
+        {
+          "point": 0,
+          "label": "Stores the defined packages as ZIP file for uploading to CRX."
+        },
+        {
+          "point": 1,
+          "label": "Define packages that can be imported by other bundles."
         }
       ]
     }
