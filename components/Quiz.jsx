@@ -2,7 +2,7 @@ import React from 'react'
 import $ from 'jquery'
 
 import Question from './Question'
-
+import Answer from './Answer'
 
 export default class Quiz extends React.Component {
 
@@ -48,10 +48,13 @@ export default class Quiz extends React.Component {
     let completed = (quiz.questions && (index === quiz.questions.length)) ? true : false
     let numberOfQuestions = quiz.questions ? quiz.questions.length : 0
     let score = 0
+    let reviewIndex = 0;
+      
     if (completed) {
       this.state.answers.map((answer, i) => (
         score = score + this.state.quiz.questions[i].answers[answer].point
       ))
+      reviewIndex = this.state.quiz.questions.length - score;
     }
 
     return (
@@ -60,7 +63,16 @@ export default class Quiz extends React.Component {
         {completed ?
           <div>
             <p>Congratulation, you finish the quiz</p>
-            Your score is {score}
+            Your score is {score} {reviewIndex}!
+!!            <br/>
+            {quiz.questions && index < numberOfQuestions ?
+              <Answer
+                question={quiz.questions[index]}
+                index={index}
+                onAnswerSelected={(event) => this.handleAnswerSelected(event)}
+                onSubmit={() => this.handleSubmit()}
+              />
+            : ''}
           </div>
         :
           <div>
