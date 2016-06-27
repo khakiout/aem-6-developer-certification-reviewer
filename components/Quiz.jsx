@@ -48,13 +48,11 @@ export default class Quiz extends React.Component {
     let completed = (quiz.questions && (index === quiz.questions.length)) ? true : false
     let numberOfQuestions = quiz.questions ? quiz.questions.length : 0
     let score = 0
-    let reviewIndex = 0;
       
     if (completed) {
       this.state.answers.map((answer, i) => (
         score = score + this.state.quiz.questions[i].answers[answer].point
       ))
-      reviewIndex = this.state.quiz.questions.length - score;
     }
 
     return (
@@ -63,12 +61,13 @@ export default class Quiz extends React.Component {
         {completed ?
           <div>
             <p>Congratulation, you finish the quiz</p>
-            Your score is {score} {reviewIndex}
+            Your score is {score}
             <br/>
             {quiz.questions.map((question, i) =>
               <Answer
                 question={question}
-                index={reviewIndex}
+                key={i}
+                index={i}
               />
             )}
           </div>
