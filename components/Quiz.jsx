@@ -63,16 +63,14 @@ export default class Quiz extends React.Component {
         {completed ?
           <div>
             <p>Congratulation, you finish the quiz</p>
-            Your score is {score} {reviewIndex}!
-!!            <br/>
-            {quiz.questions && index < numberOfQuestions ?
+            Your score is {score} {reviewIndex}
+            <br/>
+            {quiz.questions.map((question, i) =>
               <Answer
-                question={quiz.questions[index]}
-                index={index}
-                onAnswerSelected={(event) => this.handleAnswerSelected(event)}
-                onSubmit={() => this.handleSubmit()}
+                question={question}
+                index={reviewIndex}
               />
-            : ''}
+            )}
           </div>
         :
           <div>

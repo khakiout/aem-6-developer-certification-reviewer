@@ -2,9 +2,7 @@ import React from 'react'
 
 const Answer = ({
   question,
-  index,
-  onAnswerSelected,
-  onSubmit
+  index
 }) => {
   return (
     <div>
@@ -12,13 +10,12 @@ const Answer = ({
       <ol type="a">
       {question.answers.map((answer, i) =>
         <li key={`${index}-${i}`}>
-          <input type="radio" name={`question_${index}`} id={`question_${index}_answer_${i}`} defaultChecked={false} value={i} onChange={onAnswerSelected} />
+          <input type="checkbox" name={`question_${index}`} id={`question_${index}_answer_${i}`} defaultChecked={answer.point > 0} value={i} disabled />
           {' '}
           <label htmlFor={`question_${index}_answer_${i}`}>{answer.label}</label>
         </li>
       )}
       </ol>
-      <button onClick={onSubmit}>Submit</button>
     </div>
   )
 }
