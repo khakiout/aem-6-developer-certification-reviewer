@@ -3,6 +3,7 @@ import $ from 'jquery'
 
 import Question from './Question'
 import Answer from './Answer'
+import Score from './Score'
 
 export default class Quiz extends React.Component {
 
@@ -74,8 +75,10 @@ export default class Quiz extends React.Component {
         <div className="divider"></div>
         {completed ?
           <div className="section">
-            <p>Congratulation, you finish the quiz</p>
-            Your score is <b>{score}/{numberOfQuestions}</b>
+            <Score
+              score={score}
+              numberOfQuestions={numberOfQuestions}
+            />
             <br/>
             {quiz.questions.map((question, i) =>
               <Answer
