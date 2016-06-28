@@ -4,12 +4,11 @@ export default class Answer extends React.Component {
 
   constructor(props) {
       super(props)
-      console.log(this.props);
   }
 
   getLabel(option, index) {
     var label = option.label
-    if (index == this.props.answer.item) {
+    if (this.props.answer && index === this.props.answer.item) {
       label = <b>{option.label}</b>
     }
     

@@ -36,7 +36,7 @@ export default class Quiz extends React.Component {
   handleAnswerSelected(event, question) {
     var answer = {
         id : question.id,
-        item : event.target.value
+        item : parseInt(event.target.value)
     }
     let list = [...this.state.answers.slice(0, this.state.index),
                 answer,
@@ -47,10 +47,6 @@ export default class Quiz extends React.Component {
   getAnswer(id) {
     let answer = this.state.answers.find(answer => answer.id === id)
     
-    if (!answer) {
-        answer = { id: 0 }
-    }
-      
     return answer
   }
 
@@ -64,19 +60,22 @@ export default class Quiz extends React.Component {
     let score = 0
       
     if (completed) {
-      this.state.answers.map((answer, i) => (
-        score = score + this.state.quiz.questions[i].options[answer.item].point
-      ))
+      quiz.questions.map((question, i) => {
+        let answer = this.getAnswer(question.id)
+        if (answer != undefined) {
+          score += question.options[answer.item].point
+        }
+      })
     }
 
     return (
       <div className="card-panel">
-        <h1>{quiz.title}</h1>
+        <h3>{quiz.title}</h3>
         <div className="divider"></div>
         {completed ?
           <div className="section">
             <p>Congratulation, you finish the quiz</p>
-            Your score is <b>{score}</b>
+            Your score is <b>{score}/{numberOfQuestions}</b>
             <br/>
             {quiz.questions.map((question, i) =>
               <Answer
