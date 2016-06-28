@@ -70,12 +70,13 @@ export default class Quiz extends React.Component {
     }
 
     return (
-      <div>
+      <div className="card-panel">
         <h1>{quiz.title}</h1>
+        <div className="divider"></div>
         {completed ?
-          <div>
+          <div className="section">
             <p>Congratulation, you finish the quiz</p>
-            Your score is {score}
+            Your score is <b>{score}</b>
             <br/>
             {quiz.questions.map((question, i) =>
               <Answer
@@ -86,8 +87,8 @@ export default class Quiz extends React.Component {
             )}
           </div>
         :
-          <div>
-          <h2>Question {index + 1} of {numberOfQuestions}</h2>
+          <div className="section">
+          <h4>Question {index + 1} of {numberOfQuestions}</h4>
           {quiz.questions && index < numberOfQuestions ?
             <Question
               question={quiz.questions[index]}
