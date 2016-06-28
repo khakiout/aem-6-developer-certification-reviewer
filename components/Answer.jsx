@@ -6,13 +6,28 @@ export default class Answer extends React.Component {
       super(props)
   }
 
-  getLabel(option, index) {
-    var label = option.label
-    if (this.props.answer && index === this.props.answer.item) {
-      label = <b>{option.label}</b>
-    }
+  determineClassName(question, index) {
+    let itemClassName = ''
+    let answer = this.props.answer
     
-    return label
+    if (answer && (answer.item === index)) {
+      if (this.isCorrect(question))
+        itemClassName = 'green lighten-5'
+      else 
+        itemClassName = 'red lighten-5'
+    }
+        
+    return itemClassName
+  }
+  
+  isCorrect(question) {
+    let answer = this.props.answer
+    let isCorrect = false
+    if (answer) {
+      isCorrect = question.options[answer.item].point > 0
+    }
+        
+    return isCorrect
   }
 
   render() {
@@ -25,9 +40,10 @@ export default class Answer extends React.Component {
         <h5>{question.question}</h5>
         <ol type="a">
         {question.options.map((option, i) =>
-          <li key={`${question.id}-${i}`}>
+          <li key={`${question.id}-${i}`} className={this.determineClassName(question, i)}>
+            &nbsp;
             <input type="checkbox" name={`question_${question.id}`} id={`question_${question.id}_answer_${i}`} defaultChecked={option.point > 0} value={i} disabled />
-            <label htmlFor={`question_${question.id}_answer_${i}`}>{this.getLabel(option, i)}</label>
+            <label htmlFor={`question_${question.id}_answer_${i}`}>{(option.point>0) ? <b>{option.label}</b> : option.label}</label>
           </li>
         )}
         </ol>
