@@ -27,17 +27,31 @@ export default class Quiz extends React.Component {
     } else {
       let score = this.state.score || 0
       this.state.answers.map((answer, i) => (
-        score = score + this.state.quiz.questions[i].answers[answer].point
+        score = score + this.state.quiz.questions[i].options[answer].point
       ))
       this.setState({'score': score})
     }
   }
 
-  handleAnswerSelected(event) {
+  handleAnswerSelected(event, question) {
+    var answer = {
+        id : question.id,
+        item : event.target.value
+    }
     let list = [...this.state.answers.slice(0, this.state.index),
-                parseInt(event.target.value),
+                answer,
                 ...this.state.answers.slice(this.state.index + 1)]
     this.setState({'answers': list})
+  }
+    
+  getAnswer(id) {
+    let answer = this.state.answers.find(answer => answer.id === id)
+    
+    if (!answer) {
+        answer = { id: 0 }
+    }
+      
+    return answer
   }
 
   render() {
@@ -51,7 +65,7 @@ export default class Quiz extends React.Component {
       
     if (completed) {
       this.state.answers.map((answer, i) => (
-        score = score + this.state.quiz.questions[i].answers[answer].point
+        score = score + this.state.quiz.questions[i].options[answer.item].point
       ))
     }
 
@@ -66,8 +80,8 @@ export default class Quiz extends React.Component {
             {quiz.questions.map((question, i) =>
               <Answer
                 question={question}
+                answer={this.getAnswer(question.id)}
                 key={i}
-                index={i}
               />
             )}
           </div>
@@ -78,7 +92,7 @@ export default class Quiz extends React.Component {
             <Question
               question={quiz.questions[index]}
               index={index}
-              onAnswerSelected={(event) => this.handleAnswerSelected(event)}
+              onAnswerSelected={(event) => this.handleAnswerSelected(event, quiz.questions[index])}
               onSubmit={() => this.handleSubmit()}
             />
           : ''}

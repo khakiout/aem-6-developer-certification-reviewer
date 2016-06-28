@@ -10,7 +10,7 @@ const Question = ({
     <div>
       <h3>{question.question}</h3>
       <ol type="a">
-      {question.answers.map((answer, i) =>
+      {question.options.map((answer, i) =>
         <li key={`${index}-${i}`}>
           <input type="radio" name={`question_${index}`} id={`question_${index}_answer_${i}`} defaultChecked={false} value={i} onChange={onAnswerSelected} />
           {' '}
