@@ -8,8 +8,12 @@
     "start": "httpster",
     "build": "webpack -p"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "AEM",
+    "reviewer",
+    "quiz"
+  ],
+  "author": "ruen",
   "license": "BSD",
   "dependencies": {
     "babel": "6.1.18",
@@ -21,6 +25,7 @@
     "babel-preset-react": "6.1.18",
     "isomorphic-fetch": "2.2.0",
     "jquery": "2.1.4",
+    "materialize-css": "^0.97.6",
     "react": "0.14.3",
     "react-dom": "0.14.3",
     "react-redux": "4.0.0",
@@ -30,6 +35,8 @@
     "webpack": "1.12.9"
   },
   "devDependencies": {
-    "httpster": "1.0.1"
+    "css-loader": "^0.23.1",
+    "httpster": "1.0.1",
+    "style-loader": "^0.13.1"
   }
 }
