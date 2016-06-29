@@ -1,0 +1,23 @@
+{
+  "id" : 8,
+  "question": "Given the following selector: print.a4 and the URL extension is html, which script will Sling render?",
+  "requiredPoints" : 1,
+  "options": [
+    {
+      "point": 1,
+      "label": "print.html.jsp"
+    },
+    {
+      "point": 0,
+      "label": "a4.html.jsp"
+    },
+    {
+      "point": 0,
+      "label": "print.a4.jsp"
+    },
+    {
+      "point": 0,
+      "label": "a4.jsp"
+    }
+  ]
+}

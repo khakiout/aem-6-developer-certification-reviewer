@@ -1,0 +1,23 @@
+{
+  "id" : 7,
+  "question": "Which tab in the Apache Felix Web OSGi Console is used to install OSGi bundles?",
+  "requiredPoints" : 1,
+  "options": [
+    {
+      "point": 0,
+      "label": "OSGi Installer tab."
+    },
+    {
+      "point": 1,
+      "label": "Bundles tab."
+    },
+    {
+      "point": 0,
+      "label": "Services tab."
+    },
+    {
+      "point": 0,
+      "label": "Components tab."
+    }
+  ]
+}

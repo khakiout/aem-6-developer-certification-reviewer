@@ -1,0 +1,23 @@
+{
+  "id" : 9,
+  "question": "What is the difference between Simple Versioning and Full Versioning?",
+  "requiredPoints" : 1,
+  "options": [
+    {
+      "point": 0,
+      "label": "Simple Versioning requires mix:simpleVersionable node type and Full Versioning requires mix:versionable node type."
+    },
+    {
+      "point": 0,
+      "label": "Simple Versioning only versions some system-specific properties. With Full Versioning all properties are versioned."
+    },
+    {
+      "point": 0,
+      "label": "Both are the same and there is no difference other than the name of the mixin type."
+    },
+    {
+      "point": 1,
+      "label": "Under Simple Versioning versions are added as direct successors of the previous version."
+    }
+  ]
+}

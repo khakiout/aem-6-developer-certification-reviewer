@@ -1,0 +1,23 @@
+{
+  "id" : 6,
+  "question": "You want to run a script as a workflow step. Which workflow step should you select?",
+  "requiredPoints" : 1,
+  "options": [
+    {
+      "point": 0,
+      "label": "Participant step."
+    },
+    {
+      "point": 1,
+      "label": "Process step."
+    },
+    {
+      "point": 0,
+      "label": "Container step."
+    },
+    {
+      "point": 0,
+      "label": "Split step."
+    }
+  ]
+}
