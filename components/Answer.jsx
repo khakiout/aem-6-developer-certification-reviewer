@@ -41,7 +41,6 @@ export default class Answer extends React.Component {
         <ol type="a">
         {question.options.map((option, i) =>
           <li key={`${question.id}-${i}`} className={this.determineClassName(question, i)}>
-            &nbsp;
             <input type="checkbox" name={`question_${question.id}`} id={`question_${question.id}_answer_${i}`} defaultChecked={option.point > 0} value={i} disabled />
             <label htmlFor={`question_${question.id}_answer_${i}`}>{(option.point>0) ? <b>{option.label}</b> : option.label}</label>
           </li>
