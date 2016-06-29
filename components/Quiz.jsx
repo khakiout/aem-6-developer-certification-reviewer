@@ -18,7 +18,27 @@ export default class Quiz extends React.Component {
 
   componentDidMount() {
     $.getJSON('./data/quiz.json', function(result) {
-      this.setState({quiz: result})
+      let quiz = {
+        title: result.title,
+        size : result.size,
+        questions: []
+      }
+      
+      function addQuestion(question) {
+        quiz.questions.push(question)
+      }
+      
+      let deferredRequests = []
+      for (var i=1; i<=quiz.size; i++) {
+        deferredRequests.push($.getJSON('./data/questions/' + i + '.json', addQuestion))
+      }
+      
+      // call the jsons
+      $.when.apply(
+        $, deferredRequests
+      ).then(function() {
+        this.setState({quiz: quiz})        
+      }.bind(this))
     }.bind(this))
   }
 

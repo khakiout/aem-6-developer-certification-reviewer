@@ -1,51 +1,5 @@
 {
   "title": "AEM 6 Developer Certification Reviewer",
-  "questions": [
-    {
-      "id" : 1,
-      "question": "How do you delete a property inside a Node object?",
-      "requiredPoints" : 1,
-      "options": [
-        {
-          "point": 0,
-          "label": "node.removeProperty(\"propertyName\");"
-        },
-        {
-          "point": 0,
-          "label": "node.setProperty(\"propertyName\", \"\");"
-        },
-        {
-          "point": 1,
-          "label": "node.setProperty(\"propertyName\", null);"
-        },
-        {
-          "point": 0,
-          "label": "node.delete(\"propertyName\");"
-        }
-      ]
-    },
-    {
-      "id" : 2,
-      "question": "What is the purpose of the Export Package Manifest header?",
-      "requiredPoints" : 1,
-      "options": [
-        {
-          "point": 0,
-          "label": "Stores the defined packages in the CQ installation folder."
-        },
-        {
-          "point": 0,
-          "label": "Define packages that are copied into a war file."
-        },
-        {
-          "point": 0,
-          "label": "Stores the defined packages as ZIP file for uploading to CRX."
-        },
-        {
-          "point": 1,
-          "label": "Define packages that can be imported by other bundles."
-        }
-      ]
-    }
-  ]
+  "size": 5,
+  "questions": [ ]
 }

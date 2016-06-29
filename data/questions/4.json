@@ -1,0 +1,23 @@
+{
+  "id" : 4,
+  "question": "You want to debug a CQ HTML client library in the author instance. You want to avoid compressing the JavaScript file. What must you do?",
+  "requiredPoints" : 1,
+  "options": [
+    {
+      "point": 0,
+      "label": "Add a property called debugClientLibs to the js.txt and set the value to true."
+    },
+    {
+      "point": 0,
+      "label": "Add a property called debug the client library root node and set the value to true."
+    },
+    {
+      "point": 1,
+      "label": "Add a query parameter to the URL called debugClientLibs with the value true."
+    },
+    {
+      "point": 0,
+      "label": "Specify an attribute called debug in the <cq:includeClientLib> tag and set the value to true."
+    }
+  ]
+}
