@@ -1,0 +1,20 @@
+.quiz-label {
+    height: auto;
+    vertical-align: top;
+}
+
+[type="radio"] {
+    &:not(:checked),
+    &:checked {
+        + label {
+            .quiz-label; 
+        }
+        
+    }
+}
+[type="checkbox"] {
+    + label {
+        margin: 2px 5px;
+        .quiz-label;
+    }
+}
