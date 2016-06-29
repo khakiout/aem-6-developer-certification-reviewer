@@ -5,7 +5,7 @@ var config = {
   entry: ['./index'],
   output: {
     path: path.join(__dirname, 'dist'),
-    publicPath: './aem-6-developer-certification-reviewer/dist/',
+    publicPath: './dist/',
     filename: 'bundle.js'
   },
   module: {
