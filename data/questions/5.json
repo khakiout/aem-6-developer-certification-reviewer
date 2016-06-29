@@ -1,0 +1,23 @@
+{
+  "id" : 5,
+  "question": "You are working with two components: Component A and Component B. Component B has a slightly different behavior than component A. What is the best way to reuse the default script of component A in component B?",
+  "requiredPoints" : 1,
+  "options": [
+    {
+      "point": 1,
+      "label": "Set a property in component B called sling:resourceSuperType with the path to component A and omit the default script in component B"
+    },
+    {
+      "point": 0,
+      "label": "Set a property in component B called sling:resourceSuperType with the path to component A and create an empty default script in component B"
+    },
+    {
+      "point": 0,
+      "label": "Set a property in component B called sling:resourceSuperType with the path to component A and include the default script of component A in the default script in component B"
+    },
+    {
+      "point": 0,
+      "label": "Copy the default script from component A into component B"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id" : 3,
+  "question": "What does an Item represent in a JCR repository hierarchical content model diagram?",
+  "requiredPoints" : 1,
+  "options": [
+    {
+      "point": 0,
+      "label": "The value to be stored"
+    },
+    {
+      "point": 1,
+      "label": "A Node or a Property"
+    },
+    {
+      "point": 0,
+      "label": "The UUID of Node"
+    },
+    {
+      "point": 0,
+      "label": "The path to a Node"
+    }
+  ]
+}

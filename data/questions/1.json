@@ -1,0 +1,23 @@
+{
+  "id" : 1,
+  "question": "How do you delete a property inside a Node object?",
+  "requiredPoints" : 1,
+  "options": [
+    {
+      "point": 0,
+      "label": "node.removeProperty(\"propertyName\");"
+    },
+    {
+      "point": 0,
+      "label": "node.setProperty(\"propertyName\", \"\");"
+    },
+    {
+      "point": 1,
+      "label": "node.setProperty(\"propertyName\", null);"
+    },
+    {
+      "point": 0,
+      "label": "node.delete(\"propertyName\");"
+    }
+  ]
+}

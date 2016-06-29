@@ -1,0 +1,23 @@
+{
+  "id" : 10,
+  "question": "You want to switch to preview mode by modifying the URL. What should you do?",
+  "requiredPoints" : 1,
+  "options": [
+    {
+      "point": 1,
+      "label": "Add the parameter wcmmode=preview to the URL."
+    },
+    {
+      "point": 0,
+      "label": "Add the parameter request=preview to the URL."
+    },
+    {
+      "point": 0,
+      "label": "Add the selector preview as the first selector in the URL"
+    },
+    {
+      "point": 0,
+      "label": "Add the suffix preview to the URL."
+    }
+  ]
+}
