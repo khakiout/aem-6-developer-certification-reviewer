@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "./aem-6-developer-certification-reviewer/dist/";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -5466,121 +5466,121 @@
 /* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/dfe56a876d0282555d1e2458e278060f.eot";
+	module.exports = __webpack_require__.p + "./fonts/dfe56a876d0282555d1e2458e278060f.eot";
 
 /***/ },
 /* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/954bbdeb86483e4ffea00c4591530ece.woff2";
+	module.exports = __webpack_require__.p + "./fonts/954bbdeb86483e4ffea00c4591530ece.woff2";
 
 /***/ },
 /* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/7500519de3d82e33d1587f8042e2afcb.woff";
+	module.exports = __webpack_require__.p + "./fonts/7500519de3d82e33d1587f8042e2afcb.woff";
 
 /***/ },
 /* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/94998475f6aea65f558494802416c1cf.ttf";
+	module.exports = __webpack_require__.p + "./fonts/94998475f6aea65f558494802416c1cf.ttf";
 
 /***/ },
 /* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/a990f611f2305dc12965f186c2ef2690.eot";
+	module.exports = __webpack_require__.p + "./fonts/a990f611f2305dc12965f186c2ef2690.eot";
 
 /***/ },
 /* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/69f8a0617ac472f78e45841323a3df9e.woff2";
+	module.exports = __webpack_require__.p + "./fonts/69f8a0617ac472f78e45841323a3df9e.woff2";
 
 /***/ },
 /* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/3b813c2ae0d04909a33a18d792912ee7.woff";
+	module.exports = __webpack_require__.p + "./fonts/3b813c2ae0d04909a33a18d792912ee7.woff";
 
 /***/ },
 /* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/46e48ce0628835f68a7369d0254e4283.ttf";
+	module.exports = __webpack_require__.p + "./fonts/46e48ce0628835f68a7369d0254e4283.ttf";
 
 /***/ },
 /* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/30799efa5bf74129468ad4e257551dc3.eot";
+	module.exports = __webpack_require__.p + "./fonts/30799efa5bf74129468ad4e257551dc3.eot";
 
 /***/ },
 /* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/2751ee43015f9884c3642f103b7f70c9.woff2";
+	module.exports = __webpack_require__.p + "./fonts/2751ee43015f9884c3642f103b7f70c9.woff2";
 
 /***/ },
 /* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/ba3dcd8903e3d0af5de7792777f8ae0d.woff";
+	module.exports = __webpack_require__.p + "./fonts/ba3dcd8903e3d0af5de7792777f8ae0d.woff";
 
 /***/ },
 /* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/df7b648ce5356ea1ebce435b3459fd60.ttf";
+	module.exports = __webpack_require__.p + "./fonts/df7b648ce5356ea1ebce435b3459fd60.ttf";
 
 /***/ },
 /* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/4d9f3f9e5195e7b074bb63ba4ce42208.eot";
+	module.exports = __webpack_require__.p + "./fonts/4d9f3f9e5195e7b074bb63ba4ce42208.eot";
 
 /***/ },
 /* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/574fd0b50367f886d359e8264938fc37.woff2";
+	module.exports = __webpack_require__.p + "./fonts/574fd0b50367f886d359e8264938fc37.woff2";
 
 /***/ },
 /* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/fc78759e93a6cac50458610e3d9d63a0.woff";
+	module.exports = __webpack_require__.p + "./fonts/fc78759e93a6cac50458610e3d9d63a0.woff";
 
 /***/ },
 /* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/894a2ede85a483bf9bedefd4db45cdb9.ttf";
+	module.exports = __webpack_require__.p + "./fonts/894a2ede85a483bf9bedefd4db45cdb9.ttf";
 
 /***/ },
 /* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/ecdd509cadbf1ea78b8d2e31ec52328c.eot";
+	module.exports = __webpack_require__.p + "./fonts/ecdd509cadbf1ea78b8d2e31ec52328c.eot";
 
 /***/ },
 /* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/39b2c3031be6b4ea96e2e3e95d307814.woff2";
+	module.exports = __webpack_require__.p + "./fonts/39b2c3031be6b4ea96e2e3e95d307814.woff2";
 
 /***/ },
 /* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/dc81817def276b4f21395f7ea5e88dcd.woff";
+	module.exports = __webpack_require__.p + "./fonts/dc81817def276b4f21395f7ea5e88dcd.woff";
 
 /***/ },
 /* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fonts/e31fcf1885e371e19f5786c2bdfeae1b.ttf";
+	module.exports = __webpack_require__.p + "./fonts/e31fcf1885e371e19f5786c2bdfeae1b.ttf";
 
 /***/ },
 /* 215 */
