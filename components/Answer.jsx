@@ -12,9 +12,9 @@ export default class Answer extends React.Component {
     
     if (answer && (answer.item === index)) {
       if (this.isCorrect(question))
-        itemClassName = 'green lighten-5'
+        itemClassName = 'green lighten-4'
       else 
-        itemClassName = 'red lighten-5'
+        itemClassName = 'red lighten-4'
     }
         
     return itemClassName
