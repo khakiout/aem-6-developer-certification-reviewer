@@ -30,7 +30,7 @@ export default class Quiz extends React.Component {
       
       let deferredRequests = []
       for (var i=1; i<=quiz.size; i++) {
-        deferredRequests.push($.getJSON('./data/questions/' + i + '.json', addQuestion))
+        deferredRequests.push($.getJSON('./data/questions/' + ('00'+ i).slice(-2) + '.json', addQuestion))
       }
       
       // call the jsons
