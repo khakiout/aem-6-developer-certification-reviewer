@@ -54,6 +54,12 @@ export default class Quiz extends React.Component {
     }
   }
 
+  skipQuiz() {
+    let questions = this.state.quiz.questions
+    if (questions)
+      this.setState({'index' : questions.length})
+  }
+
   handleAnswerSelected(event, question) {
     var answer = {
         id : question.id,
@@ -119,6 +125,7 @@ export default class Quiz extends React.Component {
               onSubmit={() => this.handleSubmit()}
             />
           : ''}
+          <button onClick={() => this.skipQuiz()} className="waves-effect waves-light btn grey">Skip Quiz</button>
           </div>
         }
       </div>
