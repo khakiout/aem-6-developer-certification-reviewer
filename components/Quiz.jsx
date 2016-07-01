@@ -30,7 +30,7 @@ export default class Quiz extends React.Component {
       
       let deferredRequests = []
       for (var i=1; i<=quiz.size; i++) {
-        deferredRequests.push($.getJSON('./data/questions/' + i + '.json', addQuestion))
+        deferredRequests.push($.getJSON('./data/questions/' + ('00'+ i).slice(-2) + '.json', addQuestion))
       }
       
       // call the jsons
@@ -52,6 +52,12 @@ export default class Quiz extends React.Component {
       ))
       this.setState({'score': score})
     }
+  }
+
+  skipQuiz() {
+    let questions = this.state.quiz.questions
+    if (questions)
+      this.setState({'index' : questions.length})
   }
 
   handleAnswerSelected(event, question) {
@@ -119,6 +125,7 @@ export default class Quiz extends React.Component {
               onSubmit={() => this.handleSubmit()}
             />
           : ''}
+          <button onClick={() => this.skipQuiz()} className="waves-effect waves-light btn grey">Skip Quiz</button>
           </div>
         }
       </div>

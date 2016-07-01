@@ -6,12 +6,13 @@ I want to create a quiz application to help our team in reviewing for the [AEM 6
 
 There are 10 questions included in the source code, some of those are from the AEM 6 Developer sample exam.
 
-This repo is a study of both how React works with Webpack and of the Materialize CSS framework. Initial code is from https://github.com/gchandrasa/quiz-react
+This repo is a study of both how React and Redux works with Webpack, and of the Materialize CSS framework. Initial code is from https://github.com/gchandrasa/quiz-react
 
 ## Tech
 
 - [Webpack](https://webpack.github.io/)
 - [React](https://facebook.github.io/react/)
+- [Redux](https://github.com/reactjs/redux)
 - [Less](http://lesscss.org/)
 - [Materialize](http://materializecss.com/)
 
