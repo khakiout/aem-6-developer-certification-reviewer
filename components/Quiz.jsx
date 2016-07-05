@@ -45,12 +45,12 @@ export default class Quiz extends React.Component {
   handleSubmit() {
     if (this.state.index < this.state.quiz.questions.length) {
       this.setState({'index': this.state.index + 1})
-    } else {
-      let score = this.state.score || 0
-      this.state.answers.map((answer, i) => (
-        score = score + this.state.quiz.questions[i].options[answer].point
-      ))
-      this.setState({'score': score})
+    }
+  }
+
+  goBack() {
+    if (this.state.index < this.state.quiz.questions.length) {
+      this.setState({'index': this.state.index - 1})
     }
   }
 
@@ -69,6 +69,7 @@ export default class Quiz extends React.Component {
                 answer,
                 ...this.state.answers.slice(this.state.index + 1)]
     this.setState({'answers': list})
+    console.log(this.state.answers)
   }
     
   getAnswer(id) {
@@ -122,6 +123,7 @@ export default class Quiz extends React.Component {
               question={quiz.questions[index]}
               index={index}
               onAnswerSelected={(event) => this.handleAnswerSelected(event, quiz.questions[index])}
+              onBack={() => this.goBack()}
               onSubmit={() => this.handleSubmit()}
             />
           : ''}

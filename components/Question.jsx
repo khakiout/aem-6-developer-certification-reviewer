@@ -4,6 +4,7 @@ const Question = ({
   question,
   index,
   onAnswerSelected,
+  onBack,
   onSubmit
 }) => {
   return (
@@ -17,7 +18,8 @@ const Question = ({
         </li>
       )}
       </ol>
-      <button onClick={onSubmit} className="waves-effect waves-light btn">Submit</button>
+      {(index>0) ? <span><button onClick={onBack} className="waves-effect waves-light btn">Previous</button>&nbsp;&nbsp;</span> : ''}
+      <button onClick={onSubmit} className="waves-effect waves-light btn">Next</button>
     </div>
   )
 }
