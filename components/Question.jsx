@@ -2,6 +2,7 @@ import React from 'react'
 
 const Question = ({
   question,
+  answer,
   index,
   onAnswerSelected,
   onBack,
@@ -11,10 +12,10 @@ const Question = ({
     <div className="card-panel">
       <h5>{question.question}</h5>
       <ol type="a">
-      {question.options.map((answer, i) =>
+      {question.options.map((option, i) =>
         <li key={`${index}-${i}`}>
-          <input type="radio" className="filled-in" name={`question_${index}`} id={`question_${index}_answer_${i}`} defaultChecked={false} value={i} onChange={onAnswerSelected} />
-          <label htmlFor={`question_${index}_answer_${i}`}>{answer.label}</label>
+          <input type="radio" className="filled-in" name={`question_${index}`} id={`question_${index}_answer_${i}`} defaultChecked={(answer) ? (answer.item==i):false} value={i} onChange={onAnswerSelected} />
+          <label htmlFor={`question_${index}_answer_${i}`}>{option.label}</label>
         </li>
       )}
       </ol>
