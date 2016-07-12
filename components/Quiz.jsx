@@ -45,12 +45,12 @@ export default class Quiz extends React.Component {
   handleSubmit() {
     if (this.state.index < this.state.quiz.questions.length) {
       this.setState({'index': this.state.index + 1})
-    } else {
-      let score = this.state.score || 0
-      this.state.answers.map((answer, i) => (
-        score = score + this.state.quiz.questions[i].options[answer].point
-      ))
-      this.setState({'score': score})
+    }
+  }
+
+  goBack() {
+    if (this.state.index < this.state.quiz.questions.length) {
+      this.setState({'index': this.state.index - 1})
     }
   }
 
@@ -61,14 +61,20 @@ export default class Quiz extends React.Component {
   }
 
   handleAnswerSelected(event, question) {
-    var answer = {
-        id : question.id,
-        item : parseInt(event.target.value)
+    let answerIndex = this.state.answers.findIndex(answer => answer.id === question.id)
+    let answer = {
+      id : question.id,
+      item : parseInt(event.target.value)
     }
-    let list = [...this.state.answers.slice(0, this.state.index),
-                answer,
-                ...this.state.answers.slice(this.state.index + 1)]
+
+    let list = this.state.answers
+    if (answerIndex > -1) {
+      list[answerIndex] = answer
+    } else {
+      list.push(answer)
+    }
     this.setState({'answers': list})
+    console.log(this.state.answers)
   }
     
   getAnswer(id) {
@@ -120,8 +126,10 @@ export default class Quiz extends React.Component {
           {quiz.questions && index < numberOfQuestions ?
             <Question
               question={quiz.questions[index]}
+              answer={this.getAnswer(quiz.questions[index].id)}
               index={index}
               onAnswerSelected={(event) => this.handleAnswerSelected(event, quiz.questions[index])}
+              onBack={() => this.goBack()}
               onSubmit={() => this.handleSubmit()}
             />
           : ''}
