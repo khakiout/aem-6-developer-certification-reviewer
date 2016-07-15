@@ -12,7 +12,7 @@ export default class Score extends React.Component {
     } = this.props
     
     return (    
-      <div className="card-panel hoverable lime lighten-2">
+      <div id="score" className="card-panel hoverable lime lighten-2">
         <h4>Score: <b>{score}/{numberOfQuestions}</b></h4>
         <p className="section">
           Congratulations, you finished the quiz!

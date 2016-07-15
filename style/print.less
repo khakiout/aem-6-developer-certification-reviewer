@@ -1,0 +1,69 @@
+@media print {
+
+  * {
+    font-size: 10pt;
+  }
+
+  header nav, footer {
+    display: none;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+
+  #score {
+    display: none;
+  }
+
+  h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+  }
+
+  h3 {
+    font-size: 16pt;
+  }
+
+  h5 {
+    font-size: 12pt;
+  }
+
+  
+  .card-panel,
+  .hoverable {
+    border: none;
+    box-shadow: none;
+    padding: 5pt;
+    margin: 0;
+
+
+    ol {
+      margin: 0;
+      padding: 5pt;
+
+      li {
+        margin: 0;
+        padding-bottom: 1pt;
+        list-style-type: none;
+
+        [type="checkbox"] + label {
+          line-height: auto;
+        }
+
+        b {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .hoverable {
+    page-break-inside: avoid;
+    
+    &:hover {
+      .card-panel;
+    }
+  }
+  
+}
