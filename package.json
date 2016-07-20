@@ -7,7 +7,7 @@
     "watch": "webpack --progress --colors --watch",
     "start": "httpster",
     "build": "webpack -p",
-    "test": "jslint **/*.js"
+    "test": "./node_modules/.bin/eslint components/*.jsx && jslint --edition=es6 --white components/*.jsx"
   },
   "keywords": [
     "AEM",
@@ -37,6 +37,8 @@
   },
   "devDependencies": {
     "css-loader": "^0.23.1",
+    "eslint": "^3.1.1",
+    "eslint-plugin-react": "^5.2.2",
     "file-loader": "^0.9.0",
     "httpster": "1.0.1",
     "jslint": "^0.10.1",
