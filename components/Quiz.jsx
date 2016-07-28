@@ -4,6 +4,7 @@ import $ from 'jquery'
 import Question from './Question'
 import Answer from './Answer'
 import Score from './Score'
+import LimitPicker from './LimitPicker'
 
 export default class Quiz extends React.Component {
 
@@ -122,6 +123,9 @@ export default class Quiz extends React.Component {
           </div>
         :
           <div className="section">
+          <LimitPicker
+            onSubmit={() => this.handleSubmit()}
+          />
           <h4>Question {index + 1} of {numberOfQuestions}</h4>
           {quiz.questions && index < numberOfQuestions ?
             <Question
