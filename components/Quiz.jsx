@@ -82,7 +82,7 @@ export default class Quiz extends React.Component {
       list.push(answer)
     }
     this.setState({'answers': list})
-    console.log(this.state.answers)
+    // console.log(this.state.answers)
   }
     
   getAnswer(id) {
@@ -100,7 +100,7 @@ export default class Quiz extends React.Component {
 
   render() {
     const {
-      quiz, index, answers
+      quiz, index
     } = this.state
 
     let completed = (quiz.questions && (index === quiz.questions.length)) ? true : false
@@ -111,16 +111,13 @@ export default class Quiz extends React.Component {
     let score = 0
       
     if (quiz.status == QUIZ_STATUSES.END) {
-      quiz.questions.map((question, i) => {
+      quiz.questions.map((question) => {
         let answer = this.getAnswer(question.id)
         if (answer != undefined) {
           score += question.options[answer.item].point
         }
       })
     }
-
-    let quizElement;
-
 
     return (
       <div className="card-panel">
@@ -166,7 +163,7 @@ export default class Quiz extends React.Component {
                         )}
                       </div>
             }
-            default:      return "ERROR"
+            default:      return 'ERROR'
           }
         })()}
 
