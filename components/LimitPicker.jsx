@@ -17,23 +17,23 @@ export default class Answer extends React.Component {
       onSubmit
     } = this.props
 
-  return (
-    <div className="card-panel">
-          <div className="input-field col s3">
-            <select ref="itemcount" id="itemcount" name="itemcount">
-              <option>5</option>
-              <option>10</option>
-              <option>15</option>
-              <option>20</option>
-              <option>30</option>
-            </select>
-            <label htmlFor="itemcount">Enter number of questions</label>
-          </div>
-          
-          <div className="input-field col s3">
-            <button onClick={onSubmit} className="waves-effect waves-light btn">Start</button>
-          </div>
-    </div>
-  )
-}
+    return (
+      <div className="card-panel">
+        <div className="input-field col s3">
+          <select ref="itemcount" id="itemcount" name="itemcount">
+            <option>5</option>
+            <option>10</option>
+            <option>15</option>
+            <option>20</option>
+            <option>30</option>
+          </select>
+          <label htmlFor="itemcount">Enter number of questions</label>
+        </div>
+        
+        <div className="input-field col s3">
+          <button onClick={onSubmit} className="waves-effect waves-light btn">Start</button>
+        </div>
+      </div>
+    )
+  }
 }
