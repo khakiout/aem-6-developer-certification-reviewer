@@ -95,11 +95,27 @@ export default class Quiz extends React.Component {
     let quiz = this.state.quiz
     
     let maxCount = (count > quiz.questions.length ? quiz.questions.length : count)
+    // shuffle first before splicing
+    quiz.questions = this.shuffleArray(quiz.questions)
     quiz.questions = quiz.questions.slice(0, maxCount)
 
     quiz.status = QUIZ_STATUSES.ON_GOING
     
     this.setState({'quiz': quiz})
+  }
+
+  /**
+   * Randomize array element order in-place.
+   * Using Durstenfeld shuffle algorithm.
+   */
+  shuffleArray(array) {
+      for (var i = array.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
+      }
+      return array;
   }
 
   render() {
