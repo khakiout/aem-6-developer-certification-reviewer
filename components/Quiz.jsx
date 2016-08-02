@@ -4,6 +4,13 @@ import $ from 'jquery'
 import Question from './Question'
 import Answer from './Answer'
 import Score from './Score'
+import LimitPicker from './LimitPicker'
+
+const QUIZ_STATUSES = {
+  START : 'start',
+  ON_GOING : 'on_going',
+  END: 'end'
+}
 
 export default class Quiz extends React.Component {
 
@@ -21,6 +28,7 @@ export default class Quiz extends React.Component {
       let quiz = {
         title: result.title,
         size : result.size,
+        status : QUIZ_STATUSES.START,
         questions: []
       }
       
@@ -74,7 +82,7 @@ export default class Quiz extends React.Component {
       list.push(answer)
     }
     this.setState({'answers': list})
-    console.log(this.state.answers)
+    // console.log(this.state.answers)
   }
     
   getAnswer(id) {
@@ -83,17 +91,47 @@ export default class Quiz extends React.Component {
     return answer
   }
 
+  startQuiz(count) {
+    let quiz = this.state.quiz
+    
+    let maxCount = (count > quiz.questions.length ? quiz.questions.length : count)
+    // shuffle first before splicing
+    quiz.questions = this.shuffleArray(quiz.questions)
+    quiz.questions = quiz.questions.slice(0, maxCount)
+
+    quiz.status = QUIZ_STATUSES.ON_GOING
+    
+    this.setState({'quiz': quiz})
+  }
+
+  /**
+   * Randomize array element order in-place.
+   * Using Durstenfeld shuffle algorithm.
+   */
+  shuffleArray(array) {
+      for (var i = array.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
+      }
+      return array;
+  }
+
   render() {
     const {
-      quiz, index, answers
+      quiz, index
     } = this.state
 
     let completed = (quiz.questions && (index === quiz.questions.length)) ? true : false
+    if (completed) {
+      quiz.status = QUIZ_STATUSES.END
+    }
     let numberOfQuestions = quiz.questions ? quiz.questions.length : 0
     let score = 0
       
-    if (completed) {
-      quiz.questions.map((question, i) => {
+    if (quiz.status == QUIZ_STATUSES.END) {
+      quiz.questions.map((question) => {
         let answer = this.getAnswer(question.id)
         if (answer != undefined) {
           score += question.options[answer.item].point
@@ -105,37 +143,50 @@ export default class Quiz extends React.Component {
       <div className="card-panel">
         <h3>{quiz.title}</h3>
         <div className="divider"></div>
-        {completed ?
-          <div className="section">
-            <Score
-              score={score}
-              numberOfQuestions={numberOfQuestions}
-            />
-            <br/>
-            {quiz.questions.map((question, i) =>
-              <Answer
-                question={question}
-                answer={this.getAnswer(question.id)}
-                key={i}
-              />
-            )}
-          </div>
-        :
-          <div className="section">
-          <h4>Question {index + 1} of {numberOfQuestions}</h4>
-          {quiz.questions && index < numberOfQuestions ?
-            <Question
-              question={quiz.questions[index]}
-              answer={this.getAnswer(quiz.questions[index].id)}
-              index={index}
-              onAnswerSelected={(event) => this.handleAnswerSelected(event, quiz.questions[index])}
-              onBack={() => this.goBack()}
-              onSubmit={() => this.handleSubmit()}
-            />
-          : ''}
-          <button onClick={() => this.skipQuiz()} className="waves-effect waves-light btn grey">Skip Quiz</button>
-          </div>
-        }
+
+        {(() => {
+          switch (quiz.status) {
+            case QUIZ_STATUSES.START: {
+              return  <LimitPicker
+                        onSubmit={(count) => this.startQuiz(count)}
+                      />
+            }
+            case QUIZ_STATUSES.ON_GOING: {
+              return  <div className="section">
+                        <h4>Question {index + 1} of {numberOfQuestions}</h4>
+                        {quiz.questions && index < numberOfQuestions ?
+                          <Question
+                            question={quiz.questions[index]}
+                            answer={this.getAnswer(quiz.questions[index].id)}
+                            index={index}
+                            onAnswerSelected={(event) => this.handleAnswerSelected(event, quiz.questions[index])}
+                            onBack={() => this.goBack()}
+                            onSubmit={() => this.handleSubmit()}
+                          />
+                        : ''}
+                        <button onClick={() => this.skipQuiz()} className="waves-effect waves-light btn grey">Skip Quiz</button>
+                      </div>
+            }
+            case QUIZ_STATUSES.END: {
+              return  <div className="section">
+                        <Score
+                          score={score}
+                          numberOfQuestions={numberOfQuestions}
+                        />
+                        <br/>
+                        {quiz.questions.map((question, i) =>
+                          <Answer
+                            question={question}
+                            answer={this.getAnswer(question.id)}
+                            key={i}
+                          />
+                        )}
+                      </div>
+            }
+            default:      return 'ERROR'
+          }
+        })()}
+
       </div>
     )
   }
