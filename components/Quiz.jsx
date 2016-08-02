@@ -91,10 +91,14 @@ export default class Quiz extends React.Component {
     return answer
   }
 
-  startQuiz() {
+  startQuiz(count) {
     let quiz = this.state.quiz
-    quiz.status = QUIZ_STATUSES.ON_GOING
+    
+    let maxCount = (count > quiz.questions.length ? quiz.questions.length : count)
+    quiz.questions = quiz.questions.slice(0, maxCount)
 
+    quiz.status = QUIZ_STATUSES.ON_GOING
+    
     this.setState({'quiz': quiz})
   }
 
@@ -128,7 +132,7 @@ export default class Quiz extends React.Component {
           switch (quiz.status) {
             case QUIZ_STATUSES.START: {
               return  <LimitPicker
-                        onSubmit={() => this.startQuiz()}
+                        onSubmit={(count) => this.startQuiz(count)}
                       />
             }
             case QUIZ_STATUSES.ON_GOING: {
