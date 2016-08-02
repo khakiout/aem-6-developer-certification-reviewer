@@ -21,7 +21,7 @@ export default class LimitPicker extends React.Component {
       <div className="card-panel">
         <div className="row">
           <div className="input-field col s6">
-            <select ref="itemcount" id="itemcount" name="itemcount" defaultValue="5" >
+            <select ref="itemcount" id="itemcount" name="itemcount" defaultValue="10" >
               <option value="5">5</option>
               <option value="10">10</option>
               <option value="15">15</option>
