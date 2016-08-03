@@ -173,6 +173,7 @@ export default class Quiz extends React.Component {
                           score={score}
                           numberOfQuestions={numberOfQuestions}
                         />
+                        <button onClick={() => window.print()} className="waves-effect waves-light btn grey">Print</button>
                         <br/>
                         {quiz.questions.map((question, i) =>
                           <Answer
