@@ -19,5 +19,6 @@
       "point": 1,
       "label": "Under Simple Versioning versions are added as direct successors of the previous version. Under Full Versioning a new version can be added as a direct successor of a version that already has another direct successor."
     }
-  ]
+  ],
+  "tags" : [ "CRX", "Versioning" ]
 }

@@ -19,5 +19,6 @@
       "point": 0,
       "label": "Components tab."
     }
-  ]
+  ],
+  "tags" : [ "OSGi", "Web Console" ]
 }
