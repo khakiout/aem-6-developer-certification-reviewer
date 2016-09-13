@@ -19,5 +19,6 @@
       "point": 1,
       "label": "Define packages that can be imported by other bundles."
     }
-  ]
+  ],
+  "tags" : [ "CRX" ]
 }

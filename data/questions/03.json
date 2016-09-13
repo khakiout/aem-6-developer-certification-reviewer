@@ -19,5 +19,6 @@
       "point": 0,
       "label": "The path to a Node"
     }
-  ]
+  ],
+  "tags" : [ "JCR", "API", "Node" ]
 }
