@@ -22,7 +22,7 @@ const Question = ({
       
       <div className="row">
         {question.tags.map((tag, i) =>
-          <div className="chip">{tag}</div>
+          <div className="chip blue lighten-5">{tag}</div>
         )}
       </div>
 
