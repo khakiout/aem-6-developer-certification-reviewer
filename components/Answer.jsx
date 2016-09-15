@@ -46,6 +46,12 @@ export default class Answer extends React.Component {
           </li>
         )}
         </ol>
+
+        <div className="row">
+          {question.tags.map((tag, i) =>
+            <div className="chip">{tag}</div>
+          )}
+        </div>
       </div>
     )
   }
