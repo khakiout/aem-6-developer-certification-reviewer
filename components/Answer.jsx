@@ -49,7 +49,7 @@ export default class Answer extends React.Component {
 
         <div className="row">
           {question.tags.map((tag, i) =>
-            <div className="chip blue lighten-5">{tag}</div>
+            <div key={i} className="chip blue lighten-5">{tag}</div>
           )}
         </div>
       </div>
