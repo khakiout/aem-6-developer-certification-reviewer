@@ -19,5 +19,6 @@
       "point": 0,
       "label": "Copy the default script from component A into component B"
     }
-  ]
+  ],
+  "tags" : [ "Components" ]
 }

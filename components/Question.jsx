@@ -19,6 +19,13 @@ const Question = ({
         </li>
       )}
       </ol>
+      
+      <div className="row">
+        {question.tags.map((tag, i) =>
+          <div key={i} className="chip blue lighten-5">{tag}</div>
+        )}
+      </div>
+
       {(index>0) ? <span><button onClick={onBack} className="waves-effect waves-light btn">Previous</button>&nbsp;&nbsp;</span> : ''}
       <button onClick={onSubmit} className="waves-effect waves-light btn">Next</button>
     </div>

@@ -19,5 +19,6 @@
       "point": 0,
       "label": "Add the suffix preview to the URL."
     }
-  ]
+  ],
+  "tags" : [ "Templates", "wcmmode" ]
 }

@@ -19,5 +19,6 @@
       "point": 0,
       "label": "Split step."
     }
-  ]
+  ],
+  "tags" : [ "Workflow", "API" ]
 }

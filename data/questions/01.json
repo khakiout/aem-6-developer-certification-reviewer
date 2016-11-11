@@ -19,5 +19,6 @@
       "point": 0,
       "label": "node.delete(\"propertyName\");"
     }
-  ]
+  ],
+  "tags" : [ "Node", "JCR", "API" ]
 }

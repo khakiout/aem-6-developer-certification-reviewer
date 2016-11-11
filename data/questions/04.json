@@ -19,5 +19,6 @@
       "point": 0,
       "label": "Specify an attribute called debug in the <cq:includeClientLib> tag and set the value to true."
     }
-  ]
+  ],
+  "tags" : [ "Clientlibs", "Client Library" ]
 }
